@@ -9,7 +9,7 @@
   },
   "author": "Wasin Waeosri (plynoi@gmail.com)",
   "license": "MIT",
-  "homepage": "https://github.com/plynoi/typescript-learning-nativefetch-webpack",
+  "homepage": "https://github.com/plynoi/typescript-learning-fetch-webpack",
   "devDependencies": {
     "@types/node": "^17.0.25",
     "@types/yargs": "^17.0.10",
