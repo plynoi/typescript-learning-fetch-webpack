@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "native_fetch_webpack",
   "version": "1.0.0",
   "description": "This is just my simple project for learning TypeScript and it's ecosystem",
   "main": "src/main.ts",

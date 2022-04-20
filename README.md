@@ -51,7 +51,7 @@ The first step is to unzip or download the example project folder into a directo
     ```
 4. Run a Docker container with the following command: 
     ```
-    $> docker run -it --name testfetch --env-file .env testfetch --choic <l || r>
+    $> docker run -it --name testfetch --env-file .env testfetch --choice <l || r>
     ```
 5. To stop and delete a Docker container, run the following command:
     ```
