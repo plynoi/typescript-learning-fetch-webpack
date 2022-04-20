@@ -1,0 +1,49 @@
+# Builder stage, for building the source code only
+FROM node:17.5.0-alpine as compiler
+LABEL maintainer="Developer Advocate"
+
+# Create app directory
+WORKDIR /app
+
+# Install app dependencies and build configurations
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+COPY package*.json .
+COPY tsconfig.json .
+COPY webpack.config.js .
+#RUN npm install
+RUN npm install -g npm@8.7.0 \
+    && npm ci \
+    && npm cache clean --force
+# Copy source
+COPY src ./src
+
+# Build app
+RUN npm run build
+
+#FROM node:17.5.0-alpine as builder
+
+# Create app directory
+#WORKDIR /app
+
+# Install app dependencies and build configurations as "Production"
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# COPY package*.json .
+# #RUN npm install
+# RUN npm install -g npm@8.7.0 \
+#     && npm ci --production \
+#     && npm cache clean --force
+
+## Third stage, for running the application in a final image.
+
+FROM node:17.5.0-alpine
+
+# Create app directory
+WORKDIR /app
+# Copy the bundle file and run script
+COPY --from=compiler /app/dist ./dist
+#COPY --from=builder /app/node_modules ./node_modules
+
+#CMD [ "node", "--experimental-fetch", "./dist/rdp_nodefetch.js"]
+ENTRYPOINT [ "node" ,"--experimental-fetch","./dist/main.js"]
+# Set Docker to start bash
+#CMD /bin/bash
