@@ -1,5 +1,11 @@
-// const { hideBin } = require('yargs/helpers')
-// const yargs = require('yargs/yargs')
+///*|----------------------------------------------------------------------------------------------------
+// *|            This source code is provided under the MIT license      	--
+// *|  and is provided AS IS with no warranty or guarantee of fit for purpose.  --
+// *|                See the project's LICENSE.md for details.                  					--
+// *|           Copyright (C) 2022 Wasin W. All rights reserved.            		--
+///*|----------------------------------------------------------------------------------------------------
+
+// Testing Node.js Native Fetch API - using TypeScript, Docker and Webpack Project
 
 import yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
@@ -29,7 +35,7 @@ const sendHTTPRequest = async(url: string)=>{
 
 const main = async() =>{
 
-    console.log('Running Main')
+    console.log('Running Main: Testing Node.js Native Fetch API - using TypeScript, Docker and Webpack Project')
 
     const argv = yargs(hideBin(process.argv))
     .option('choice', {

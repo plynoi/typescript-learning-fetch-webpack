@@ -20,7 +20,7 @@ COPY src ./src
 # Build app
 RUN npm run build
 
-
+# 2nd stage for running the application
 FROM node:17.5.0-alpine
 
 # Create app directory

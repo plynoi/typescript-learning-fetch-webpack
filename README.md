@@ -6,23 +6,25 @@
 
 ## <a id="intro"></a>Introduction
 
-The Node.js **native** [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) i s now available as experimental feature in [Node v17.5](https://nodejs.org/en/blog/release/v17.5.0/). Developers do not need to install extra fetch packages anymore. Frontend Developers will be fimilar with the HTTP code in Node. 
+The Node.js **native** [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is now available as experimental feature in [Node v17.5](https://nodejs.org/en/blog/release/v17.5.0/). Developers do not need to install extra fetch packages anymore. Frontend Developers will be familiar with the HTTP code in Node. 
 
-To test this built-in API, you can run the native Fetch code with the ```--experimental-fetch``` when you run Node application as follow:
+To test this built-in API, you can run the native Fetch code with the ```--experimental-fetch``` when you run the Node application as follow:
 
 ```
-$> node app.js --experimental-fetch 
+$> node --experimental-fetch app.js 
 ```
 
-Since it is still an experimental feature, so it is adivisable to test it in a control environment such as Docker. This helps to avoid mess-up your local environment. 
+Since it is still an experimental feature, so it is advisable to test it in a controlled environment such as Docker. This helps to avoid mess-up your local environment. 
 
 ## <a id="demo"></a>Demo Project
 
-This demo project is a simple console application that requests an anonymous Far-right quote message from [@narze](https://twitter.com/narze)'s [Awesome Salim Quotes](https://watasalim.vercel.app/) application and API using the Node v17.50's native Fetch API. The application is written in [TypeScript](https://www.typescriptlang.org/), then compile and bundle to Node.js compatiable JavaScript with [Webpack](https://webpack.js.org/)
+This demo project is a simple console application that requests an anonymous Far-right quote message from [@narze](https://twitter.com/narze)'s [Awesome Salim Quotes](https://watasalim.vercel.app/) application and API using the Node v17.50's native Fetch API. The application is written in [TypeScript](https://www.typescriptlang.org/), then compile and bundle to Node.js compatible JavaScript with the [Webpack](https://webpack.js.org/)
 
 ![Figure-1](images/01_console_result.png "app basic result") 
 
-**Note**: This is just my simple project for learning TypeScript and it's ecosystem. Next project will be [Babel](https://babeljs.io/)/[RollUp](https://rollupjs.org/guide/en/) build 😉.
+**Note**: This is just my simple project for learning TypeScript and its ecosystem. Next project will be [Babel](https://babeljs.io/)/[RollUp](https://rollupjs.org/guide/en/) build 😉. I have tried them, and it has [an issue](https://github.com/chalk/supports-color/issues/113) that Rollup always bundles ```broswer.js``` even for the Node target 😭😭😭.
+
+If you want to see the same project with the [Typescript TSC](https://www.typescriptlang.org/docs/handbook/compiler-options.html), please visit my [typescript-learning-fetch-tsc](https://github.com/plynoi/typescript-learning-fetch-tsc) repository.
 
 ## <a id="single_vs_multi"></a>Single-Stage Build vs Multi-Stage Builds
 
@@ -64,3 +66,4 @@ For further details, please check out the following resources:
 * [The Fetch API is finally coming to Node.js](https://blog.logrocket.com/fetch-api-node-js/) blog post.
 * [Webpack: TypeScript](https://webpack.js.org/guides/typescript/) page.
 * [TypeScript: Integrating with Build Tools](https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html) page.
+* [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) page.
