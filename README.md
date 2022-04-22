@@ -6,7 +6,7 @@
 
 ## <a id="intro"></a>Introduction
 
-The Node.js **native** [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is now available as experimental feature in [Node v17.5](https://nodejs.org/en/blog/release/v17.5.0/). Developers do not need to install extra fetch packages anymore. Frontend Developers will be familiar with the HTTP code in Node. 
+The Node.js **native** [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is now available as experimental feature in [Node v17.5](https://nodejs.org/en/blog/release/v17.5.0/) (**As of Apr 2022**). Developers do not need to install extra fetch packages anymore. Frontend Developers will be familiar with the HTTP code in Node. 
 
 To test this built-in API, you can run the native Fetch code with the ```--experimental-fetch``` when you run the Node application as follow:
 
@@ -15,6 +15,8 @@ $> node --experimental-fetch app.js
 ```
 
 Since it is still an experimental feature, so it is advisable to test it in a controlled environment such as Docker. This helps to avoid mess-up your local environment. 
+
+**Note**: This native Fetch API will *be enabled by default in [Node version 18](https://sdtimes.com/softwaredev/node-js-18-available-with-fetch-api-enabled-by-default)*. 
 
 ## <a id="demo"></a>Demo Project
 
@@ -31,7 +33,8 @@ If you want to see the same project with the [Typescript TSC](https://www.typesc
 ## <a id="prerequisite"></a>Prerequisite
 This demo project requires the following dependencies software.
 1. Docker.
-2. Internet connection.
+2. [Node official image](https://hub.docker.com/_/node) (version **17.5.0 and above**).
+3. Internet connection.
 
 ## <a id="running"></a>Running the application.
 

@@ -1,5 +1,7 @@
 # Builder stage, for building the source code only
-FROM node:17.5.0-alpine as compiler
+ARG NODE_VERSION=17.5.0
+ARG VARIANT=alpine
+FROM node:${NODE_VERSION}-${VARIANT} as compiler
 LABEL maintainer="plynoi.com"
 
 # Create app directory
@@ -21,7 +23,7 @@ COPY src ./src
 RUN npm run build
 
 # 2nd stage for running the application
-FROM node:17.5.0-alpine
+FROM node:${NODE_VERSION}-${VARIANT}
 
 # Create app directory
 WORKDIR /app
