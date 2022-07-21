@@ -1,5 +1,5 @@
 # Builder stage, for building the source code only
-ARG NODE_VERSION=17.5.0
+ARG NODE_VERSION=18.6.0
 ARG VARIANT=alpine
 FROM node:${NODE_VERSION}-${VARIANT} as compiler
 LABEL maintainer="plynoi.com"
@@ -13,7 +13,7 @@ COPY package*.json .
 COPY tsconfig.json .
 COPY webpack.config.js .
 #RUN npm install
-RUN npm install -g npm@8.7.0 \
+RUN npm install -g npm@8.15.0 \
     && npm ci \
     && npm cache clean --force
 # Copy source
@@ -32,4 +32,5 @@ COPY --from=compiler /app/dist ./dist
 #COPY --from=builder /app/node_modules ./node_modules
 
 #CMD [ "node", "--experimental-fetch", "./dist/rdp_nodefetch.js"]
-ENTRYPOINT [ "node" ,"--experimental-fetch","./dist/main.js"]
+#ENTRYPOINT [ "node" ,"--experimental-fetch","./dist/main.js"]
+ENTRYPOINT [ "node" ,"./dist/main.js"]

@@ -1,6 +1,6 @@
 # Testing Node.js Native Fetch API - using TypeScript, Docker and Webpack
 - version: 1.0
-- Last update: Apr 2022
+- Last update: Jul 2022
 - Environment: Windows WSL
 - Prerequisite: [Docker and Internet connection](#prerequisite)
 
@@ -8,13 +8,16 @@
 
 The Node.js **native** [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is now available as experimental feature in [Node v17.5](https://nodejs.org/en/blog/release/v17.5.0/) (**As of Apr 2022**). Developers do not need to install extra fetch packages anymore. Frontend Developers will be familiar with the HTTP code in Node. 
 
-To test this built-in API, you can run the native Fetch code with the ```--experimental-fetch``` when you run the Node application as follow:
+To run this built-in API, you can run the native Fetch code with the ```--experimental-fetch``` argument with Node.js 17.5.0 or just a node command with Node.js 18.0.0 when you run the Node application as follow:
 
 ```
-$> node --experimental-fetch app.js 
+$> node app.js //node 18.0.0
+$> node --experimental-fetch app.js //node 17.5.0
 ```
 
 Since it is still an experimental feature, so it is advisable to test it in a controlled environment such as Docker. This helps to avoid mess-up your local environment. 
+
+This example project is focusing on Node version 18.6.0.
 
 **Note**: This native Fetch API will *be enabled by default in [Node version 18](https://sdtimes.com/softwaredev/node-js-18-available-with-fetch-api-enabled-by-default)*. 
 
